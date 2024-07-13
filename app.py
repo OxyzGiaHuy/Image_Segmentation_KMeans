@@ -21,11 +21,11 @@ def app():
     st.title('Image Segmentation using KMeans')
 
     # Upload image or URL
-    k_value = st.slider("Select number of clusters (k)", 2, 10, 5)
     uploaded_file = st.file_uploader(
         "Choose an image file", type=["jpg", "jpeg", "png"])
     image_url = st.text_input("Or enter image URL")
-
+    k_value = st.slider("Select number of clusters (k)", 2, 10, 5)
+    
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
     elif image_url:
