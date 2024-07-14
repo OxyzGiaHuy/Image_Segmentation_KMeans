@@ -23,7 +23,6 @@ def app():
     uploaded_file = st.file_uploader(
         "Choose an image file", type=["jpg", "jpeg", "png"])
     image_url = st.text_input("Or enter image URL")
-    k_value = st.slider("Select number of clusters (k)", 2, 10, 5)
     
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
@@ -33,6 +32,7 @@ def app():
         image = None
 
     if image is not None:
+        k_value = st.slider("Select number of clusters (k)", 2, 10, 5)
         left_col, right_col = st.columns(2)
         left_col.image(image, caption='Original Image', use_column_width=True)
 
