@@ -17,7 +17,6 @@ def kmeans_segmentation(image, k):
 
 
 def app():
-    st.set_page_config(page_title='CoTAI - S7 Postclass')
     st.title('Image Segmentation using KMeans')
 
     # Upload image or URL
