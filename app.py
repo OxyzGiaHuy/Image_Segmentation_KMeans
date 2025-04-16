@@ -34,13 +34,13 @@ def app():
     if image is not None:
         k_value = st.slider("Select number of clusters (k)", 2, 10, 5)
         left_col, right_col = st.columns(2)
-        left_col.image(image, caption='Original Image', use_column_width=True)
+        left_col.image(image, caption='Original Image', use_container_width=True)
 
         # Apply KMeans segmentation
         segmented_image = kmeans_segmentation(image, k_value)
 
         right_col.image(segmented_image,
-                        caption='Segmented Image', use_column_width=True)
+                        caption='Segmented Image', use_container_width=True)
     else:
         st.write("Please upload an image or enter an image URL.")
 
